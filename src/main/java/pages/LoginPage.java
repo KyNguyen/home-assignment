@@ -12,24 +12,24 @@ import utils.Logging;
 
 import java.util.List;
 
-public class HomePage {
+public class LoginPage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private Actions actions;
 
-	public HomePage(WebDriver driver, WebDriverWait wait) {
+	public LoginPage(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
 		this.wait = wait;
 		this.actions = new Actions(driver);
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(className = "category-cards")
-	private WebElement cardsCategory;
+	@FindBy(xpath = "//div[@id='desktop-menu']//input[@placeholder='Weather in your city']")
+	private WebElement txbSearchWeather;
 
-	public int getTotalCategoryCards() {
-		List<WebElement> lstCard = cardsCategory.findElements(By.xpath("//div[contains(@class,'top-card')]"));
+	public String searchWeatherInCity(String cityName) {
+	    txbSearchWeather.
 		return lstCard.size();
 	}
 }

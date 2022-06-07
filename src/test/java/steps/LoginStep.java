@@ -8,15 +8,15 @@ import utils.Logging;
 
 import static org.junit.Assert.assertEquals;
 
-public class HomeStep {
+public class LoginStep {
 
-	private HomePage homePage;
+	private LoginPage loginPage;
 	private CommonPage commonPage;
 	private TestContext testContext;
 
 	public HomeStep(TestContext context) {
 		testContext = context;
-		homePage = testContext.getPageManager().getHomePage();
+		loginPage = testContext.getPageManager().getLoginPage();
 		commonPage = testContext.getPageManager().getCommonPage();
 	}
 

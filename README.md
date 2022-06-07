@@ -1,6 +1,6 @@
-# cucumber.assignments
-Demo web-site:
-- url = https://demoqa.com
+# nab.assignment - Part 2: UI Automation
+Application Under Test - AUT:
+- url = https://openweathermap.org/
 
 Check Configuration:
 - Check proxy network in "settings.xml" file, Eclipse or IntelliJ config and your machine

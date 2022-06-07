@@ -31,7 +31,7 @@ public class Hooks {
 
     @Before(order = 1)
     public void setUp() {
-        Reporter.assignAuthor("Demo Test - Tools QA");
+        Reporter.assignAuthor("Demo Test - NAB Assignment");
     }
 
     @After(order = 1)

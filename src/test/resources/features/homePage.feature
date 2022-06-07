@@ -1,13 +1,11 @@
-Feature: TOOLS QA Homepage
-  As a user, I want to navigate to TOOLS QA homepage by url
+Feature: Search weather in your city
+  As a user, I want to search the weather in your city
 
-  Background: User stays at Tools QA Homepage
-    Given I stay at Tools QA Homepage
-
-  @Demo_001
-  Scenario: Validate total category cards in homepage
-    Then I verify total category cards is "6" in homepage
-
-  @Demo_002
-  Scenario: Validate total category cards in homepage
-    Then I verify total category cards is "5" in homepage
+  @TestCase_01
+  Scenario: Validate the weather displayed in Ha Noi City
+    Given I navigate to url "https://openweathermap.org/"
+    When I search the weather of "Ha Noi" city
+    And I click on the link in result list
+    Then I verify the current date is displayed correct
+    And I verify the city name is displayed correct
+    And I verify the temperature of weather is displayed correct

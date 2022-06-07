@@ -50,11 +50,6 @@ public class DriverManager {
                 }
                 driver = new ChromeDriver(chromeOptions);
                 break;
-            case INTERNET_EXPLORER:
-                Logging.info(String.format("Open Internet Explorer Browser"));
-                WebDriverManager.iedriver().proxy(getProxy()).setup();
-                driver = new InternetExplorerDriver();
-                break;
             case FIREFOX:
                 Logging.info(String.format("Open Firefox Browser"));
                 WebDriverManager.firefoxdriver().proxy(getProxy()).setup();

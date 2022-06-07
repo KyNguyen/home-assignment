@@ -10,15 +10,15 @@ public class CommonStep {
 
     private TestContext testContext;
     private CommonPage commonPage;
-    private HomePage homePage;
+    private LoginPage loginPage;
 
     public CommonStep(TestContext context) {
         testContext = context;
         commonPage = testContext.getPageManager().getCommonPage();
-        homePage = testContext.getPageManager().getHomePage();
+        loginPage = testContext.getPageManager().getLoginPage();
     }
 
-    @When("^I stay at Tools QA Homepage$")
+    @When("^I stay at Dashboard$")
     public void iStayAtToolsQAHomepage() throws Throwable {
         commonPage.navigateToUrl(FileReaderManager.getInstance().getConfigFileReader().getApplicationURL());
     }
