@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    stages {
+        stage('Initial') {
+            steps {
+                script {
+                    echo 'Stage Initial'
+                }
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                script {
+                    echo 'Stage Cleanup'
+                }
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                script {
+                    echo 'Stage Checkout'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                 script {
+                    echo 'Stage Build'
+                 }
+            }
+        }
+    }
+}
