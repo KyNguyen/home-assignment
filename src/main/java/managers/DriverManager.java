@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Constants;
 import utils.Logging;
@@ -38,26 +37,26 @@ public class DriverManager {
         setupProxy();
         switch (driverType) {
             case CHROME:
-                Logging.info(String.format("Open Chrome Browser"));
+                Logging.info("Open Chrome Browser");
                 WebDriverManager.chromedriver().proxy(getProxy()).setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.addArguments("disable-infobars");
                 if (FileReaderManager.getInstance().getConfigFileReader().getHeadlessMode().equals("yes")) {
-                    chromeOptions.setHeadless(true);
+                    chromeOptions.setHeadless(false);
                     chromeOptions.addArguments("--window-size=1920,1080");
                 }
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case FIREFOX:
-                Logging.info(String.format("Open Firefox Browser"));
+                Logging.info("Open Firefox Browser");
                 WebDriverManager.firefoxdriver().proxy(getProxy()).setup();
                 FirefoxProfile profile = new FirefoxProfile();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.setProfile(profile);
                 if (FileReaderManager.getInstance().getConfigFileReader().getHeadlessMode().equals("yes")) {
-                    firefoxOptions.setHeadless(true);
+                    firefoxOptions.setHeadless(false);
                     firefoxOptions.addArguments("--window-size=1920,1080");
                 }
 
@@ -78,12 +77,12 @@ public class DriverManager {
     }
 
     public void closeDriver() {
-        Logging.info(String.format("Close Browser"));
+        Logging.info("Close Browser");
         driver.close();
     }
 
     private void setupProxy() {
-        Logging.info(String.format("Setup Proxy to access Internet and download library"));
+        Logging.info("Setup Proxy to access Internet and download library");
         System.setProperty(Constants.WDM_PROXY_HOST, FileReaderManager.getInstance().getConfigFileReader().getWDMProxyHost());
         System.setProperty(Constants.WDM_PROXY_USER, FileReaderManager.getInstance().getConfigFileReader().getWDMUsername());
         System.setProperty(Constants.WDM_PROXY_PASS, StringUtils.newStringUtf8(Base64.decodeBase64(FileReaderManager.getInstance().getConfigFileReader().getWDMPassword())));
@@ -94,7 +93,6 @@ public class DriverManager {
         String user = FileReaderManager.getInstance().getConfigFileReader().getWDMUsername();
         String pass = StringUtils.newStringUtf8(Base64.decodeBase64(FileReaderManager.getInstance().getConfigFileReader().getWDMPassword()));
         String proxyHostAndPort = FileReaderManager.getInstance().getConfigFileReader().getWDMProxyHost();
-        String proxy = String.format("http://%s:%s@%s", user, pass, proxyHostAndPort);
-        return proxy;
+        return String.format("http://%s:%s@%s", user, pass, proxyHostAndPort);
     }
 }

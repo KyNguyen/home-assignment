@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.bosch</groupId>
+	<groupId>com.kynguyen</groupId>
 	<artifactId>nab.assignment</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
@@ -147,8 +147,7 @@
                                         <goal>testCompile</goal>
                                     </goals>
                                 </pluginExecutionFilter>
-                                <action> 
-                                    <ignore></ignore>
+                                <action>
                                 </action>
                             </pluginExecution>
                         </pluginExecutions>

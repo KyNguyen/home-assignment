@@ -4,22 +4,16 @@ import cucumber.api.java.en.When;
 import cucumbers.TestContext;
 import managers.FileReaderManager;
 import pages.CommonPage;
-import pages.HomePage;
 
 public class CommonStep {
-
-    private TestContext testContext;
-    private CommonPage commonPage;
-    private LoginPage loginPage;
+    private final CommonPage commonPage;
 
     public CommonStep(TestContext context) {
-        testContext = context;
-        commonPage = testContext.getPageManager().getCommonPage();
-        loginPage = testContext.getPageManager().getLoginPage();
+        commonPage = context.getPageManager().getCommonPage();
     }
 
-    @When("^I stay at Dashboard$")
-    public void iStayAtToolsQAHomepage() throws Throwable {
+    @When("^I stay at Open Weather Map Dashboard page$")
+    public void iStayAtOpenWeatherMapDashboardPage() {
         commonPage.navigateToUrl(FileReaderManager.getInstance().getConfigFileReader().getApplicationURL());
     }
 }

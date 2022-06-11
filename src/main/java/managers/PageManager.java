@@ -3,13 +3,13 @@ package managers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CommonPage;
-import pages.HomePage;
+import pages.DashboardPage;
 
 public class PageManager {
-    private WebDriver driver;
-    private WebDriverWait wait;
+    private final WebDriver driver;
+    private final WebDriverWait wait;
     private CommonPage commonPage;
-    private HomePage homePage;
+    private DashboardPage dashboardPage;
 
     public PageManager(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -20,7 +20,7 @@ public class PageManager {
         return (commonPage == null) ? commonPage = new CommonPage(driver, wait) : commonPage;
     }
 
-    public HomePage getHomePage() {
-        return (homePage == null) ? homePage = new HomePage(driver, wait) : homePage;
+    public DashboardPage getDashboardPage() {
+        return (dashboardPage == null) ? dashboardPage = new DashboardPage(driver, wait) : dashboardPage;
     }
 }

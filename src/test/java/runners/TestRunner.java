@@ -11,7 +11,7 @@ import utils.Constants;
 @CucumberOptions(
         features = {"."},
         glue= {"steps"},
-        tags = {},
+        tags = {"@TestCase_001", "@TestCase_002"},
         plugin = {"pretty",
                   "html:target/cucumber-reports",
                   "json:target/cucumber-reports/cucumber.json",
@@ -19,7 +19,6 @@ import utils.Constants;
                   "com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
         monochrome = true)
 public class TestRunner {
-
     @AfterClass
     public static void writeExtendReport() {
         Reporter.loadXMLConfig(Constants.EXTENDS_REPORT_PATH);

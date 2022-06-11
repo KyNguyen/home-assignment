@@ -9,29 +9,22 @@ import dataTypes.TestCaseData;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import pages.CommonPage;
-import pages.HomePage;
+import utils.Logging;
 
 import java.io.File;
 import java.io.IOException;
 
 public class Hooks {
-
     public static TestCaseData testCaseData;
-
     public TestContext testContext;
-    private HomePage homePage;
-    private CommonPage commonPage;
 
     public Hooks(TestContext context) {
         testContext = context;
-        this.homePage = testContext.getPageManager().getHomePage();
-        this.commonPage = testContext.getPageManager().getCommonPage();
     }
 
     @Before(order = 1)
     public void setUp() {
-        Reporter.assignAuthor("Demo Test - NAB Assignment");
+        Reporter.assignAuthor("Test - NAB Assignment");
     }
 
     @After(order = 1)
@@ -52,7 +45,7 @@ public class Hooks {
                 //This attach the specified screenshot to the test
                 Reporter.addScreenCaptureFromPath("./screenshots/" + screenshotName + ".png");
             } catch (IOException e) {
-                e.printStackTrace();
+                Logging.error(e.getMessage());
             }
         }
     }
