@@ -1,8 +1,14 @@
 [
   {
-    "testCaseId": "TestCase_001"
+    "testCaseId": "Test_01_Passed",
+    "cityName": "Ha Noi",
+    "cityNameDisplayed": "Hanoi, VN",
+    "temperature": "°C"
   },
   {
-    "testCaseId": "Demo_002"
+    "testCaseId": "Test_02_Failed",
+    "cityName": "Quang Ngai",
+    "cityNameDisplayed": "Quang Ngai, VN",
+    "temperature": "°F"
   }
 ]

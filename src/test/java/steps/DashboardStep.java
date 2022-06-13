@@ -7,6 +7,9 @@ import cucumbers.TestContext;
 import org.junit.Assert;
 import pages.DashboardPage;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class DashboardStep {
 	private final DashboardPage dashboardPage;
 
@@ -26,16 +29,18 @@ public class DashboardStep {
 
 	@Then("^I verify the current date is displayed correct$")
 	public void iVerifyTheCurrentDateIsDisplayedCorrect() {
-		Assert.assertTrue(dashboardPage.verifyTheCurrentDateDisplayedCorrect());
+		String currentDate = new SimpleDateFormat("MMM dd").format(Calendar.getInstance().getTime());
+		Assert.assertEquals(currentDate, dashboardPage.getTheCurrentDateDisplayed());
 	}
 
 	@And("^I verify the city name \"([^\"]*)\" is displayed correct$")
 	public void iVerifyTheCityNameIsDisplayedCorrect(String cityName) {
-		Assert.assertTrue(dashboardPage.verifyTheCityNameDisplayedCorrect(cityName));
+		Assert.assertEquals(cityName, dashboardPage.getTheCityNameDisplayed());
 	}
 
 	@And("^I verify the temperature \"([^\"]*)\" is displayed correct$")
 	public void iVerifyTheTemperatureOfWeatherIsDisplayedCorrect(String temperatureSign) {
-		Assert.assertTrue(dashboardPage.verifyTheTheTemperatureDisplayedCorrect(temperatureSign));
+		// Note: Only validate the temperature display regardless its number
+		Assert.assertTrue(dashboardPage.getTheTemperatureDisplayed().contains(temperatureSign));
 	}
 }

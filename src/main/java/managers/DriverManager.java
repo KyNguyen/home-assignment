@@ -44,7 +44,7 @@ public class DriverManager {
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.addArguments("disable-infobars");
                 if (FileReaderManager.getInstance().getConfigFileReader().getHeadlessMode().equals("yes")) {
-                    chromeOptions.setHeadless(false);
+                    chromeOptions.setHeadless(true);
                     chromeOptions.addArguments("--window-size=1920,1080");
                 }
                 driver = new ChromeDriver(chromeOptions);
@@ -56,7 +56,7 @@ public class DriverManager {
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.setProfile(profile);
                 if (FileReaderManager.getInstance().getConfigFileReader().getHeadlessMode().equals("yes")) {
-                    firefoxOptions.setHeadless(false);
+                    firefoxOptions.setHeadless(true);
                     firefoxOptions.addArguments("--window-size=1920,1080");
                 }
 
@@ -65,7 +65,7 @@ public class DriverManager {
         }
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigFileReader().getImplicitlyWait(), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigFileReader().getImplicitWait(), TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(FileReaderManager.getInstance().getConfigFileReader().getPageLoadTimeout(), TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(FileReaderManager.getInstance().getConfigFileReader().getScriptTimeout(), TimeUnit.SECONDS);
         return driver;

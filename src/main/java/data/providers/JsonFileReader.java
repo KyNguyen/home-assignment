@@ -1,7 +1,7 @@
-package dataProviders;
+package data.providers;
 
 import com.google.gson.Gson;
-import dataTypes.TestCaseData;
+import data.types.TestCaseData;
 import managers.FileReaderManager;
 
 import java.io.BufferedReader;
@@ -11,26 +11,25 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *
+ */
 public class JsonFileReader {
     private final String testDataFilePath = FileReaderManager.getInstance().getConfigFileReader().getTestDataResourcePath() + "TestData.json";
-    private List<TestCaseData> testCaseList;
+    private final List<TestCaseData> testCaseList;
 
     public JsonFileReader(){
         testCaseList = getTestData();
     }
 
     private List<TestCaseData> getTestData() {
+        // Gson is a Java library that can be used to convert Java Objects into their JSON representation.
         Gson gson = new Gson();
-        BufferedReader bufferReader = null;
-        try {
-            bufferReader = new BufferedReader(new FileReader(testDataFilePath));
+        try (BufferedReader bufferReader = new BufferedReader(new FileReader(testDataFilePath))) {
             TestCaseData[] pages = gson.fromJson(bufferReader, TestCaseData[].class);
             return Arrays.asList(pages);
-        }catch(FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException("Json file not found at path : " + testDataFilePath);
-        }finally {
-            try { if(bufferReader != null) bufferReader.close();}
-            catch (IOException ignore) {}
         }
     }
 

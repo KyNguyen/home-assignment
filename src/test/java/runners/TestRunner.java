@@ -9,9 +9,9 @@ import utils.Constants;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"."},
+        features = {"src/test/resources/features"},
         glue= {"steps"},
-        tags = {"@TestCase_001", "@TestCase_002"},
+        tags = {"@Test_01_Passed,@Test_02_Failed"},
         plugin = {"pretty",
                   "html:target/cucumber-reports",
                   "json:target/cucumber-reports/cucumber.json",

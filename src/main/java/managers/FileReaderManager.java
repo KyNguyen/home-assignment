@@ -1,7 +1,7 @@
 package managers;
 
-import dataProviders.ConfigFileReader;
-import dataProviders.JsonFileReader;
+import data.providers.ConfigFileReader;
+import data.providers.JsonFileReader;
 
 public class FileReaderManager {
     private static FileReaderManager fileReaderManager = new FileReaderManager();
