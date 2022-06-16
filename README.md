@@ -158,7 +158,7 @@ _Answer:_
 
 _Answer:_
    - **List Bugs** of the application/features as below:
-     - Reference in the Excel file - **`bugs_report.xlsx`**.
+     - Reference in the Excel file - **`bugs_report.xlsx`**. (in path src\test\resources\bugs)
    - **Priority** - is the order in which the developer should resolve a defect.
      - Low − The flaw is an annoyance, but it can be repaired once the more important flaw has been addressed.
      - Medium − A flaw should be corrected throughout the usual course of development operations. It will have to wait till a new version is released.
