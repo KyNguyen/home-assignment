@@ -10,16 +10,64 @@ Given the application under test (AUT): https://openweathermap.org/
    Testing skill (Different Test Type, Test Level, Test Coverage) (Please provide
    your assumptions in the requirement as long as they are reasonable).
 
-_Answer:_ 
-   - My assumption for the requirement as below:
-     - Unit Tests, Code Quality & Code Coverage are basically done by Developers to make sure their code is working fine and meet the user specifications.
-     - Had Staging environment (Q server) to perform all testing activities before releasing on production (P server).
-     - Focus testing on the given feature only - Search weather in your city.
-     - Only supported on Chrome (version)/Firefox (version) browser.
-     - Only supported on Windows (From window 7)/macOS (from ) operating system.
-
-
+_Answer:_
    - **Test Approach** for Search weather feature.
+     - Process of testing
+       - Test Planning & Control
+         - Scope: Given feature - Search weather feature.
+         - Assumption
+           - Unit Tests, Code Quality & Code Coverage are basically done by Developers to make sure their code is working fine and meet the user specifications.
+           - Had Staging environment (Q server) to perform all testing activities before releasing on production (P server).
+           - Focus testing on the given feature only - Search weather in your city.
+           - Supported on Chrome / Firefox browser.
+           - Supported on Windows (From window 7) operating system.
+         - Test Tasks: testing Search weather feature using various types of testing.
+         - Test Tools: 
+           - Using software development tool JIRA.
+           - Automation tools using Cucumber framework in Java.
+         - Planning for testing budget.
+         - Schedule time for test analysis, design, implementation, and closure process.
+       - Test Analysis & Design
+         - 3-step process to the Test Design process – Test Conditions, Test Cases, Test Procedures. 
+           - **Test Conditions:** a test condition verifies a small section of the Search Functional. 
+           - **Test Cases:** pre-conditions, a set of inputs, expected outcome and the post-conditions to verify the Test Condition 
+           - **Test Procedure:** actual sequence of actions or steps to execute the test
+       - Test Implementation & Execution
+       - Evaluating Exit Criteria & Reporting
+       - Test Closure Activities
+     - Testing levels
+       - Unit Test covered by Developers.
+       - Integration / System / Acceptance Testing covered by Testers.
+     - Roles and responsibilities of each team member
+       - QA Leader
+         - Represents the software testing team as well as enables customer relationship.
+         - Identifying the testing activities for team members.
+         - Planning the entire testing process.
+         - Preparing the status report of testing activities.
+         - Sharing updates on testing with the project manager.
+         - Planning pre and post-test meetings.
+       - Test Lead
+         - Technical expertise related to the test program and approach.
+         - Provides support for customer interface, staff planning, and supervision, as well as progress status reporting.
+         - Validating the quality of the testing requirements such as testability, test design, and script, test automation, etc.
+         - Assisting the software testing team to be aware of the latest trends in the world of software testing. 
+         - Arranging walk-through for test design and procedure.
+         - Implementing the test process.
+         - Ensuring that test-product documentation is complete.
+       - Manual Test Engineer
+         - With a clear understanding of the Graphical User Interface (GUI) design and its standards.
+         - Using associated test data to design and develop test procedures and cases.
+         - Manually executing the test procedures.
+         - Attending test-procedure walk-through.
+         - Following the required set standards.
+         - Find a Bug and Raise Bug to test management tool.
+       - Automated Test Engineer
+         - Designing and developing test procedures automatically on the basis of requirements.
+         - Following rest-design standards.
+         - Attending test procedure walk-throughs.
+         - Executing the tests and preparing reports for the same.
+         - Find a Bug and Raise Bug to test management tool.
+     - Types of Testing
      - _Functionality Testing_ - Search weather feature must be tested. 
        - Any values that are being typed in by the user must be checked for proper validation. 
        - Also, other basic requirements such as setting default values for each field, proper error messages displayed on wrong entry, if applicable, must also be verified.
@@ -47,18 +95,61 @@ _Answer:_
        - Also, when this maximum number of allowed users is exceeded, the website must be tested for proper crash recovery.
      - _Acceptance testing_
        - Acceptance testing are basically done to ensure that the requirements of the specification are met.
+     - Define Test management & automation tools for test execution.
+     - Adding new defects, re-testing, Defect triage, Regression Testing and test sign off
 
 2. Design test cases for given feature by using different testing techniques (E.g.
    black-box, white-box, ...) for UI / API testing.
 
 _Answer:_
-  - Test cases for Search weather in your city feature
+  - Description of Search engine is very flexible. How it works:
+    - To make it more precise put the city's name, comma, 2-letter country code (List of ISO3166 country codes). 
+    - You will get all proper cities in chosen country.
+    - The order is important - the first is city name then comma then country. 
+    - Example - London, GB or New York, US.
+  - Assumption
+    - Test cases for Search on "Weather in your city" in the top-menu.
+    - Test cases for Search on "Search city" in the weather widget.
+    - Test Cases are designed in High-level contains Title / Summary only.
+    - Test Case have to cover the description of Search engine above.
+    - OpenWeatherMap is the latest version (I called is version 1.0).
+    - Perform testing on the latest version of Chrome/Firefox browser.
+    - Using Windows 10 Enterprise to perform testing.
   - UI testing
     - Functional testing
+      1. Verify the search field present and aligned.
+      2. Verify placeholder text added on search or not.
+      3. Verify spelling and grammar should be correct for placeholder text.
+      4. Verify search icon is present on the field.
+      5. Verify cursor should present on click on the search field.
+      6. Verify search is functional and generating the correct result for valid city name.
+      7. Verify search working by adding city name and pressing the Enter key from the keyboard.
+      8. Verify search working by adding city name and click on the search button/icon.
+      9. Verify the result when user enter partial searched city name and click on search button/icon.
+      10. Verify if the user can paste the city name with the mouse.
+      11. Verify an error message display by entering invalid city name in the search field and clicking the search button/icon.
+      12. Verify an error message should display for blank input.
+      13. Verify and observe how much time required for getting the search result.
+      14. Verify a loader added if it takes time to get the result.
+      15. Verify the search result generated by the search in the correct order as per requirement.
+      16. Verify pagination added in case if the search result goes on the number of pages.
+      17. Verify pagination is accessible or not by clicking on the Next, Previous and number.
+      18. Verify the max and min range for the search city name.
+      19. Verify the search functionality when user enter negative value and click on search (try with all possible way .(A-Z, a-z , 0-9 symbol etc.)
+      20. Verify auto-suggestion shown on adding a city name or not.
+      21. Verify the format of results when search the city name by the city's name, comma, 2-letter country code.
+      22. Verify the order of city name, the first is city name then comma then country after searching.
     - Non-functional testing
-    - Regression testing
-  - API testing
-    - verify status code, response time and accuracy data.
+      1. Verify Response time and latency during normal hours.
+      2. Verify the website does not crumble under the pressure of many users browsing it.
+      3. Verify that when the maximum number of users that the website can support access the website at the same time, performance of Search feature does not deteriorate.
+      4. Verify that application load time should not be more than 5 secs up to 1000 users accessing it simultaneously.
+      
+  - API testing - using Postman tool
+    - GET method - URI = https://openweathermap.org/find ; KEY = q ; VALUE = city name 
+      1. Verify the response HTTP status code 200 OK after Search feature.
+      2. Verify the response time of Search feature not greater than 5s.
+      3. Verify the expires of cookie for Search feature in a day.
 
 3. Find bugs of the application/ features and report them in your desired bug
    template. Explain how you triage your defect in terms of priority/ severity as
@@ -66,7 +157,7 @@ _Answer:_
 
 _Answer:_
    - **List Bugs** of the application/features as below:
-     - propose my bug template
+     - Reference in the Excel file - **`bugs_report.xlsx`**.
    - **Priority** - is the order in which the developer should resolve a defect.
      - Low − The flaw is an annoyance, but it can be repaired once the more important flaw has been addressed.
      - Medium − A flaw should be corrected throughout the usual course of development operations. It will have to wait till a new version is released.
@@ -113,7 +204,9 @@ ________________________________________________________________________________
 - Run 1/list Scenario: input value in "tags = {},".
   - 1 Scenario: tags = {"@DPassedCase"} and right click TestRunner class to run.
   - list Scenario: tags = {"@PassedCase,@FailedCase"} and right-click TestRunner class to run.
-- Run by command line: mvn verify
+- Run by command line to support integrate with CI/CD system like Jenkins
+  - Run 1 scenario: mvn test -Dcucumber.options="--tags '@Test_01_Passed'"
+  - RUn 2 scenario: mvn test -Dcucumber.options="--tags '@Test_01_Passed and @Test_02_Failed'"
 
 ### How to read the Test report
 - The report will be generated in "target/cucumber-report" folder.
@@ -140,3 +233,18 @@ ________________________________________________________________________________
 - **Step.java class will be called methods from PageFactory in "src/main/java/pages"
 - Using logging to record in log file with 5 levels (info/warn/error/fatal/debug)
 - Input Test Data in ***.feature files or store on Json file to read
+
+_______________________________________________________________________________________
+
+# Integration on CI/CD System - Jenkins
+
+### How to integrate on Jenkins
+- Download & Install Apache Maven via link https://maven.apache.org/download.cgi.
+- Download Jenkins from link https://www.jenkins.io/download/ and following steps in https://www.guru99.com/download-install-jenkins.html to install Jenkins server.
+- Login to Jenkins and create a new job to integrate this maven project.
+- In **Configure** menu of this job, we provide some information needed to integrate
+  - _Source Code Management_ - Git, URL, account and branch.
+  - _Build Triggers_ - Checked Build periodically and provides a cron-like feature to periodically execute this project.
+  - _Build_ - Select Maven, provide Root POM file and Goals to execute {mvn test -Dcucumber.options="--tags '@Test_01_Passed'"}
+  - _Post-build Actions_ - select Editable Email Notification and provide Recipient list, content, subject to send email result.
+- When receiving the result via email, we can click the link inside email and navigate to see the details.
