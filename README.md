@@ -68,34 +68,35 @@ _Answer:_
          - Executing the tests and preparing reports for the same.
          - Find a Bug and Raise Bug to test management tool.
      - Types of Testing
-     - _Functionality Testing_ - Search weather feature must be tested. 
-       - Any values that are being typed in by the user must be checked for proper validation. 
-       - Also, other basic requirements such as setting default values for each field, proper error messages displayed on wrong entry, if applicable, must also be verified.
-       - Tester must also ensure that the cookies can be enabled/disabled. Also, encryption of cookies must be tested. 
-       - One needs to also delete the cookies and see if security stays intact. 
-       - Miscellaneous testing with respect to fetching/updating data to the database and HTML/CSS validation must also be done.
-     - _Compatibility Testing_ - An application will be accessed over the globe and so its compatibility is of prime importance.
-       - The Search feature must be checked for operating system compatibility, browser compatibility.
-       - Test the website’s appearance on different inched monitors. Also, may try different font sizes on browsers.
-     - _Usability Testing_ 
-       - Testing for correct navigation within the webpage must be carried out in order to validate proper surfing of the web pages, consistency between various web pages and presence of proper user help at relevant places. 
-       - Also, presence of content on the pages must be tested for accuracy, logical/structural display, any spelling/grammatical errors and coordinated font sizes/colors.
-       - Image sizes and shapes, tables and charts must look in place within the webpages.
-     - _Interface Testing_ 
-       - Interactions between web server interfaces and application server interfaces must be tested properly. Also, relevant error messages must be shown incase any problem arises during the interactions. 
-       - Interactions between application servers and database servers must also be checked for correctness. Proper data updates/fetches from the backend database must be validated. 
-       - Check for proper handling of errors such as maintenance time, accidental/intentional resets and other broken connection between the servers.
-     - _Security Testing_ - Internet is where crime rate is on a steady rise, and so the website must be tested for good and strong security in place. 
-       - Login bypasses must be tested, direct URL modification must be tested, and entry into the website through invalid login details must be tested. 
-       - Testing must be done to include SQL injection, cross-site scripting, spoofing and password cracking on the website.
-     - _Performance/Load Testing_
-       - Response time and latency during normal hours must be tested on a website. 
-       - It is extremely important to ensure that the website does not crumble under the pressure of many users browsing it. 
-       - Tester must ensure that when the maximum number of users that the website can support access the website at the same time, its performance does not deteriorate. 
-       - Also, when this maximum number of allowed users is exceeded, the website must be tested for proper crash recovery.
-     - _Acceptance testing_
-       - Acceptance testing are basically done to ensure that the requirements of the specification are met.
+       - _Functionality Testing_ - Search weather feature must be tested. 
+         - Any values that are being typed in by the user must be checked for proper validation. 
+         - Also, other basic requirements such as setting default values for each field, proper error messages displayed on wrong entry, if applicable, must also be verified.
+         - Tester must also ensure that the cookies can be enabled/disabled. Also, encryption of cookies must be tested. 
+         - One needs to also delete the cookies and see if security stays intact. 
+         - Miscellaneous testing with respect to fetching/updating data to the database and HTML/CSS validation must also be done.
+       - _Compatibility Testing_ - An application will be accessed over the globe and so its compatibility is of prime importance.
+         - The Search feature must be checked for operating system compatibility, browser compatibility.
+         - Test the website’s appearance on different inched monitors. Also, may try different font sizes on browsers.
+       - _Usability Testing_ 
+         - Testing for correct navigation within the webpage must be carried out in order to validate proper surfing of the web pages, consistency between various web pages and presence of proper user help at relevant places. 
+         - Also, presence of content on the pages must be tested for accuracy, logical/structural display, any spelling/grammatical errors and coordinated font sizes/colors.
+         - Image sizes and shapes, tables and charts must look in place within the webpages.
+       - _Interface Testing_ 
+         - Interactions between web server interfaces and application server interfaces must be tested properly. Also, relevant error messages must be shown incase any problem arises during the interactions. 
+         - Interactions between application servers and database servers must also be checked for correctness. Proper data updates/fetches from the backend database must be validated. 
+         - Check for proper handling of errors such as maintenance time, accidental/intentional resets and other broken connection between the servers.
+       - _Security Testing_ - Internet is where crime rate is on a steady rise, and so the website must be tested for good and strong security in place. 
+         - Login bypasses must be tested, direct URL modification must be tested, and entry into the website through invalid login details must be tested. 
+         - Testing must be done to include SQL injection, cross-site scripting, spoofing and password cracking on the website.
+       - _Performance/Load Testing_
+         - Response time and latency during normal hours must be tested on a website. 
+         - It is extremely important to ensure that the website does not crumble under the pressure of many users browsing it. 
+         - Tester must ensure that when the maximum number of users that the website can support access the website at the same time, its performance does not deteriorate. 
+         - Also, when this maximum number of allowed users is exceeded, the website must be tested for proper crash recovery.
+       - _Acceptance testing_
+         - Acceptance testing are basically done to ensure that the requirements of the specification are met.
      - Define Test management & automation tools for test execution.
+       - test management tool on JIRA and automation tools is build a Cucumber framework
      - Adding new defects, re-testing, Defect triage, Regression Testing and test sign off
 
 2. Design test cases for given feature by using different testing techniques (E.g.
